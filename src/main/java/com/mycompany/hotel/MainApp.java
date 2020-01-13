@@ -15,12 +15,10 @@ public class MainApp extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css"); 
-     
-        
-        
         stage.setTitle("JavaFX and Maven");
         stage.setScene(scene);
-        stage.show();
+        stage.show(); 
+        System.out.print("Hey it's mee");
     }
 
     /**
