@@ -15,7 +15,7 @@ public class MainApp extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/Scene.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/styles/Styles.css"); 
-        System.out.print("hi"); 
+     
         
         
         stage.setTitle("JavaFX and Maven");
