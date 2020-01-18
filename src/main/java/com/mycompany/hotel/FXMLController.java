@@ -1,5 +1,12 @@
 package com.mycompany.hotel;
 
+import animatefx.animation.Bounce;
+import animatefx.animation.FadeIn;
+import animatefx.animation.FadeInDown;
+import animatefx.animation.FadeInLeft;
+import animatefx.animation.FadeInRight;
+import animatefx.animation.Flash;
+import animatefx.animation.Pulse;
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,7 +41,9 @@ public class FXMLController implements Initializable {
 
     @FXML
     private void ContinueClick(ActionEvent event) {     
-       SignPan.toFront(); 
+        
+        new FadeInRight(SignPan).play();
+        SignPan.toFront(); 
        
     }
 } 
