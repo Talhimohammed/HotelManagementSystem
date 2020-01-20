@@ -18,8 +18,30 @@
          <children>
             <Pane layoutX="351.0" layoutY="4.0" prefHeight="413.0" prefWidth="374.0">
                <children>
-                  <Pane layoutX="-1.0" layoutY="5.0" prefHeight="408.0" prefWidth="373.0" style="-fx-background-color: #fff;" />
-                  <Pane prefHeight="413.0" prefWidth="374.0" style="-fx-background-color: #fff;">
+                  <Pane fx:id="PanSignUp" layoutX="-1.0" layoutY="5.0" prefHeight="408.0" prefWidth="373.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="84.0" layoutY="352.0" prefHeight="33.0" prefWidth="206.0" style="-fx-background-color: #3C9AB7;" text="Sign Up" textFill="WHITE" />
+                        <JFXTextField layoutX="83.0" layoutY="90.0" prefHeight="33.0" prefWidth="206.0" promptText="Email" unFocusColor="#b3dfed" />
+                        <JFXPasswordField layoutX="83.0" layoutY="154.0" prefHeight="25.0" prefWidth="206.0" promptText="Password" unFocusColor="#b3dfed" />
+                        <JFXPasswordField layoutX="84.0" layoutY="218.0" prefHeight="25.0" prefWidth="206.0" promptText="Confirm your password" unFocusColor="#b3dfed" />
+                        <ImageView fitHeight="56.0" fitWidth="148.0" layoutX="120.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Pictures/Welcome.jpg" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="39.0" fitWidth="32.0" layoutX="327.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Pictures/icons8_close_window_48px_2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="45.0" fitWidth="48.0" layoutX="14.0" layoutY="17.0" onMousePressed="#BackToSignIn" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Pictures/back.png" />
+                           </image>
+                        </ImageView>
+                        <JFXTextField layoutX="83.0" layoutY="280.0" prefHeight="33.0" prefWidth="206.0" promptText="Index" unFocusColor="#b3dfed" />
+                     </children></Pane>
+                  <Pane fx:id="PanSinIn" prefHeight="413.0" prefWidth="374.0" style="-fx-background-color: #fff;">
                      <children>
                         <JFXTextField layoutX="91.0" layoutY="126.0" prefHeight="33.0" prefWidth="206.0" promptText="Email" unFocusColor="#b3dfed" />
                         <JFXButton buttonType="RAISED" layoutX="91.0" layoutY="308.0" prefHeight="33.0" prefWidth="206.0" style="-fx-background-color: #3C9AB7;" text="Login" textFill="WHITE" />
@@ -43,7 +65,7 @@
                               <Image url="@../Pictures/icons8_show_password_64px.png" />
                            </image>
                         </ImageView>
-                        <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="370.0" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Sign up" textFill="WHITE" />
+                        <JFXButton fx:id="NewClient" buttonType="RAISED" layoutX="17.0" layoutY="370.0" onAction="#toSingUpPan" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="New Client ?" textFill="WHITE" />
                         <Label layoutX="214.0" layoutY="374.0" prefHeight="25.0" prefWidth="138.0" text=" Forgot your password ?" textFill="#e04343" />
                         <Label layoutX="105.0" layoutY="39.0" text="Sign In">
                            <font>
@@ -64,7 +86,7 @@
                         <Font name="System Bold" size="46.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="190.0" fitWidth="187.0" layoutX="78.0" layoutY="156.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="190.0" fitWidth="187.0" layoutX="83.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Pictures/hotel.png" />
                      </image>
@@ -92,11 +114,6 @@
                   <Font name="Bell MT Bold" size="43.0" />
                </font>
             </Label>
-            <ImageView fitHeight="40.0" fitWidth="39.0" layoutX="470.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Pictures/icons8_circled_right_64px.png" />
-               </image>
-            </ImageView>
          </children>
       </Pane>
    </children>

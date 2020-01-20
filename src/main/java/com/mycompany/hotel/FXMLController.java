@@ -5,8 +5,7 @@ import animatefx.animation.FadeIn;
 import animatefx.animation.FadeInDown;
 import animatefx.animation.FadeInLeft;
 import animatefx.animation.FadeInRight;
-import animatefx.animation.Flash;
-import animatefx.animation.Pulse;
+
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -14,6 +13,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 
 public class FXMLController implements Initializable {
@@ -25,6 +26,12 @@ public class FXMLController implements Initializable {
     private Pane WelcomePan;
     @FXML
     private JFXButton BtnContinue;
+    @FXML
+    private Pane PanSignUp;
+    @FXML
+    private Pane PanSinIn;
+    @FXML
+    private JFXButton NewClient;
     
     
     private void handleButtonAction(ActionEvent event) {
@@ -46,4 +53,25 @@ public class FXMLController implements Initializable {
         SignPan.toFront(); 
        
     }
+
+    @FXML
+    private void toSingUpPan(ActionEvent event) {   
+         new FadeIn(PanSignUp).play();  
+         PanSignUp.toFront();
+         
+        
+    }
+
+    @FXML
+    private void BackToSignIn(MouseEvent event) { 
+          new FadeIn(PanSinIn).play();  
+         PanSinIn.toFront();
+    } 
+
+  
+
+  
+
+  
+   
 } 
