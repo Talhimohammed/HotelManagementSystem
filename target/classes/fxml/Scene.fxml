@@ -18,12 +18,36 @@
          <children>
             <Pane layoutX="351.0" layoutY="4.0" prefHeight="413.0" prefWidth="374.0">
                <children>
+                  <Pane fx:id="PersonalDataPan" prefHeight="413.0" prefWidth="373.0" style="-fx-background-color: #fff;">
+                     <children>
+                        <JFXButton fx:id="Loginbutton1" buttonType="RAISED" layoutX="83.0" layoutY="306.0" onAction="#FinishAction" prefHeight="33.0" prefWidth="206.0" style="-fx-background-color: #3C9AB7;" text="Finish" textFill="WHITE" />
+                        <JFXTextField fx:id="CinTextField" layoutX="94.0" layoutY="111.0" prefHeight="25.0" prefWidth="187.0" promptText="CIN" text="CIN or Passport No" />
+                        <JFXTextField fx:id="EmailTextField" layoutX="93.0" layoutY="174.0" prefHeight="25.0" prefWidth="187.0" promptText="Email" />
+                        <JFXTextField fx:id="PhoneTextField" layoutX="94.0" layoutY="244.0" prefHeight="25.0" prefWidth="187.0" promptText="Phone" />
+                        <Label layoutX="89.0" layoutY="28.0" text="Personal Data" textFill="#3883a6">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="333.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Pictures/icons8_close_window_48px_2.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="labeltest" layoutX="94.0" layoutY="297.0" prefHeight="17.0" prefWidth="87.0" />
+                        <ImageView fitHeight="33.0" fitWidth="45.0" layoutX="14.0" layoutY="14.0" onMousePressed="#BackToSignIn" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Pictures/back.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton buttonType="RAISED" layoutX="85.0" layoutY="358.0" onAction="#CancelAction" prefHeight="33.0" prefWidth="206.0" style="-fx-background-color: #576F9B;" text="Cancel" textFill="WHITE" />
+                     </children>
+                  </Pane>
                   <Pane fx:id="PanSignUp" layoutX="-1.0" layoutY="5.0" prefHeight="408.0" prefWidth="373.0" style="-fx-background-color: #fff;">
                      <children>
-                        <JFXButton buttonType="RAISED" layoutX="84.0" layoutY="352.0" prefHeight="33.0" prefWidth="206.0" style="-fx-background-color: #3C9AB7;" text="Sign Up" textFill="WHITE" />
-                        <JFXTextField layoutX="83.0" layoutY="90.0" prefHeight="33.0" prefWidth="206.0" promptText="Email" unFocusColor="#b3dfed" />
-                        <JFXPasswordField layoutX="83.0" layoutY="154.0" prefHeight="25.0" prefWidth="206.0" promptText="Password" unFocusColor="#b3dfed" />
-                        <JFXPasswordField layoutX="84.0" layoutY="218.0" prefHeight="25.0" prefWidth="206.0" promptText="Confirm your password" unFocusColor="#b3dfed" />
+                        <JFXButton buttonType="RAISED" layoutX="84.0" layoutY="352.0" onAction="#SignUpAction" prefHeight="33.0" prefWidth="206.0" style="-fx-background-color: #3C9AB7;" text="Next" textFill="WHITE" />
+                        <JFXTextField fx:id="TextFullName" layoutX="83.0" layoutY="90.0" prefHeight="33.0" prefWidth="206.0" promptText="Full Name" unFocusColor="#b3dfed" />
+                        <JFXPasswordField fx:id="TextPassword" layoutX="84.0" layoutY="218.0" prefHeight="25.0" prefWidth="206.0" promptText="Password" unFocusColor="#b3dfed" />
                         <ImageView fitHeight="56.0" fitWidth="148.0" layoutX="120.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Pictures/Welcome.jpg" />
@@ -39,28 +63,29 @@
                               <Image url="@../Pictures/back.png" />
                            </image>
                         </ImageView>
-                        <JFXTextField layoutX="83.0" layoutY="280.0" prefHeight="33.0" prefWidth="206.0" promptText="Index" unFocusColor="#b3dfed" />
+                        <JFXTextField fx:id="TextIndex" layoutX="83.0" layoutY="280.0" prefHeight="33.0" prefWidth="206.0" promptText="Index" unFocusColor="#b3dfed" />
+                        <JFXTextField fx:id="TextLogin" layoutX="83.0" layoutY="154.0" prefHeight="33.0" prefWidth="206.0" promptText="Login" unFocusColor="#b3dfed" />
                      </children></Pane>
                   <Pane fx:id="PanSinIn" prefHeight="413.0" prefWidth="374.0" style="-fx-background-color: #fff;">
                      <children>
-                        <JFXTextField layoutX="91.0" layoutY="126.0" prefHeight="33.0" prefWidth="206.0" promptText="Email" unFocusColor="#b3dfed" />
-                        <JFXButton buttonType="RAISED" layoutX="91.0" layoutY="308.0" prefHeight="33.0" prefWidth="206.0" style="-fx-background-color: #3C9AB7;" text="Login" textFill="WHITE" />
+                        <JFXTextField fx:id="loginTextField" layoutX="91.0" layoutY="116.0" prefHeight="33.0" prefWidth="206.0" promptText="Login" unFocusColor="#b3dfed" />
+                        <JFXButton fx:id="Loginbutton" buttonType="RAISED" layoutX="91.0" layoutY="308.0" onAction="#ConnectionLogin" prefHeight="33.0" prefWidth="206.0" style="-fx-background-color: #3C9AB7;" text="Login" textFill="WHITE" />
                         <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="334.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Pictures/icons8_close_window_48px_2.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="59.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="59.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Pictures/icons8_user_30px.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="59.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="59.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Pictures/icons8_password_64px_1.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="304.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="16.0" fitWidth="25.0" layoutX="304.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Pictures/icons8_show_password_64px.png" />
                            </image>
@@ -73,7 +98,10 @@
                            </font>
                         </Label>
                         <JFXCheckBox layoutX="91.0" layoutY="263.0" text="Remember me" />
-                        <JFXPasswordField layoutX="91.0" layoutY="200.0" prefHeight="25.0" prefWidth="206.0" promptText="Password" unFocusColor="#b3dfed" />
+                        <JFXPasswordField fx:id="passwordTextField" layoutX="91.0" layoutY="192.0" prefHeight="25.0" prefWidth="206.0" promptText="Password" unFocusColor="#b3dfed" />
+                        <Label fx:id="Con" layoutX="159.0" layoutY="18.0" prefHeight="17.0" prefWidth="116.0" textFill="#58e07a" />
+                        <Label fx:id="LabelLogin" layoutX="91.0" layoutY="157.0" prefHeight="17.0" prefWidth="206.0" textFill="#e61515" />
+                        <Label fx:id="PasswordLabel" layoutX="91.0" layoutY="226.0" prefHeight="17.0" prefWidth="206.0" textFill="#e61515" />
                      </children>
                   </Pane>
                </children>

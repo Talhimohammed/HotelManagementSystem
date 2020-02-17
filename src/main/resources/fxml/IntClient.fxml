@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.hotel.IntClientController">
+   <children>
+      <VBox layoutY="51.0" prefHeight="505.0" prefWidth="175.0" style="-fx-background-color: #1E8AAB;">
+         <children>
+            <JFXButton onAction="#ReserveRomAction" prefHeight="88.0" prefWidth="196.0" text="Reserve room" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="7.0" prefWidth="175.0" style="-fx-background-color: #ffff;" />
+            <JFXButton onAction="#YReservationAction" prefHeight="99.0" prefWidth="175.0" text="My reservations" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="7.0" prefWidth="140.0" style="-fx-background-color: #ffff;" />
+            <JFXButton onAction="#UpdateAction" prefHeight="108.0" prefWidth="221.0" text="Update personal informations" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="7.0" prefWidth="170.0" style="-fx-background-color: #ffff;" />
+            <JFXButton fx:id="logOutB" onAction="#LogOutAction" prefHeight="114.0" prefWidth="205.0" text="Log out" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="6.0" prefWidth="140.0" style="-fx-background-color: #ffff;" />
+            <JFXButton onAction="#HotelInformationAction" prefHeight="102.0" prefWidth="211.0" text="Hotel Informations" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+      <Pane layoutX="-2.0" layoutY="-1.0" prefHeight="52.0" prefWidth="872.0" style="-fx-background-color: #3C9AB7;">
+         <children>
+            <ImageView fitHeight="35.0" fitWidth="39.0" layoutX="823.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pictures/icons8_close_window_48px_2.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="13.0" layoutY="12.0" prefHeight="29.0" prefWidth="341.0" text="Welcome to PARIS HOTEL" textFill="WHITE">
+               <font>
+                  <Font name="Calisto MT Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="175.0" layoutY="51.0" prefHeight="505.0" prefWidth="695.0">
+         <children>
+            <Pane fx:id="HotelAddressPan" prefHeight="505.0" prefWidth="695.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <ImageView fitHeight="361.0" fitWidth="424.0" layoutX="170.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pictures/Map.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="337.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pictures/marker_48px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="30.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pictures/marker_48px.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="74.0" layoutY="45.0" text=": Hotel Localisation">
+                     <font>
+                        <Font name="Book Antiqua Bold Italic" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="372.0" layoutY="56.0" />
+                  <ImageView fitHeight="42.0" fitWidth="39.0" layoutX="464.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pictures/telephone_64px.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="503.0" layoutY="45.0" text=" : 05 67 78 89 89 ">
+                     <font>
+                        <Font name="Book Antiqua Bold Italic" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="UpdatePan" prefHeight="505.0" prefWidth="695.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <TitledPane animated="false" layoutX="14.0" layoutY="123.0" prefHeight="269.0" prefWidth="321.0" text="Account informations">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="312.0" style="-fx-background-color: #EAF5F8;">
+                           <children>
+                              <JFXTextField layoutX="25.0" layoutY="36.0" prefHeight="27.0" prefWidth="152.0" promptText="New Login" />
+                              <JFXTextField layoutX="25.0" layoutY="151.0" prefHeight="27.0" prefWidth="152.0" promptText="New Password" />
+                              <JFXButton buttonType="RAISED" layoutX="18.0" layoutY="86.0" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Change" textFill="WHITE" />
+                              <JFXButton buttonType="RAISED" layoutX="18.0" layoutY="190.0" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Change" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </TitledPane>
+                  <TitledPane animated="false" layoutX="355.0" layoutY="123.0" prefHeight="343.0" prefWidth="319.0" text="Personal informations" textFill="#0f0f0f">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="317.0" style="-fx-background-color: #EAF5F8;">
+                           <children>
+                              <JFXTextField layoutX="24.0" layoutY="28.0" promptText="New CIN or Pasport No" />
+                              <JFXButton buttonType="RAISED" layoutX="166.0" layoutY="39.0" prefHeight="33.0" prefWidth="135.0" style="-fx-background-color: #3C9AB7;" text="Change" textFill="WHITE" />
+                              <JFXTextField layoutX="24.0" layoutY="129.0" promptText="New Email" />
+                              <JFXButton buttonType="RAISED" layoutX="166.0" layoutY="139.0" prefHeight="33.0" prefWidth="135.0" style="-fx-background-color: #3C9AB7;" text="Change" textFill="WHITE" />
+                              <JFXTextField layoutX="23.0" layoutY="218.0" prefHeight="27.0" prefWidth="136.0" promptText="New Phone" />
+                              <JFXButton buttonType="RAISED" layoutX="166.0" layoutY="228.0" prefHeight="33.0" prefWidth="135.0" style="-fx-background-color: #3C9AB7;" text="Change " textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </TitledPane>
+                  <ImageView fitHeight="99.0" fitWidth="185.0" layoutX="247.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pictures/update.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="ReservationPan" prefHeight="505.0" prefWidth="695.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <Label layoutX="268.0" layoutY="201.0" text="Reservations" />
+                  <TableView fx:id="Reservation_Table" layoutX="36.0" layoutY="53.0" onMousePressed="#MyReservationTableAction" prefHeight="200.0" prefWidth="644.0">
+                    <columns>
+                      <TableColumn fx:id="IdR_Col" prefWidth="134.0" text="Id Reservation" />
+                      <TableColumn fx:id="ChIn_Col" prefWidth="175.66668701171875" text="Check In" />
+                        <TableColumn fx:id="ChOut_Col" prefWidth="174.33331298828125" text="Check Out" />
+                        <TableColumn fx:id="IdRoom_Col" prefWidth="160.3333740234375" text="Id Room" />
+                    </columns>
+                  </TableView>
+                  <JFXButton buttonType="RAISED" layoutX="47.0" layoutY="439.0" onAction="#CancelReservationAction" prefHeight="42.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Cancel the reservation" textFill="WHITE" />
+                  <JFXDatePicker fx:id="InDate" layoutX="60.0" layoutY="320.0" promptText="Check In" />
+                  <JFXDatePicker fx:id="OutDate" layoutX="363.0" layoutY="320.0" promptText="Check Out" />
+                  <JFXButton buttonType="RAISED" layoutX="521.0" layoutY="374.0" onAction="#UpdateRervationAction" prefHeight="42.0" prefWidth="159.0" style="-fx-background-color: #3C9AB7;" text="Update " textFill="WHITE" />
+                  <Label layoutX="276.0" layoutY="14.0" prefHeight="33.0" prefWidth="175.0" text="My Reservations">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="218.0" layoutY="473.0" text="Nb : if you want to update room informations , cancel the reservation and reserve again " />
+                  <JFXButton buttonType="RAISED" layoutX="335.0" layoutY="374.0" onAction="#RefreshMyReservation" prefHeight="42.0" prefWidth="159.0" style="-fx-background-color: #3C9AB7;" text="Refresh" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane fx:id="ReserveRomPan" prefHeight="505.0" prefWidth="695.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <TableView fx:id="TableRooms" layoutX="39.0" layoutY="70.0" onMousePressed="#RoomsTableAction" prefHeight="225.0" prefWidth="617.0">
+                    <columns>
+                      <TableColumn fx:id="IdRoomCol" prefWidth="142.33331298828125" text="Id Room" />
+                      <TableColumn fx:id="CapacityCol" prefWidth="163.33331298828125" text="Capacity " />
+                        <TableColumn fx:id="TypeCol" prefWidth="160.66668701171875" text="Type" />
+                        <TableColumn fx:id="CostCol" prefWidth="148.0" text="cost / Night ( DHS )" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="274.0" layoutY="22.0" text="Available Rooms">
+                     <font>
+                        <Font name="Arial Narrow Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="39.0" layoutY="322.0" prefHeight="17.0" prefWidth="166.0" text="Reservation informations : " textFill="#6a8896">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXDatePicker fx:id="CheckInDate" layoutX="120.0" layoutY="354.0" promptText="Check In " />
+                  <JFXDatePicker fx:id="CheckOutDate" layoutX="401.0" layoutY="354.0" promptText="Check Out" />
+                  <JFXButton fx:id="SubmitButton" buttonType="RAISED" layoutX="508.0" layoutY="458.0" onAction="#SubmitAction" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Submit" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="42.0" layoutY="458.0" onAction="#RefreshAction" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Refresh" textFill="WHITE" />
+                  <Label fx:id="Label" layoutX="291.0" layoutY="420.0" prefHeight="17.0" prefWidth="109.0" />
+                  <JFXButton buttonType="RAISED" layoutX="42.0" layoutY="412.0" onAction="#CheckPriceAction" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Check Total Price" textFill="WHITE" />
+                  <Label fx:id="labelprice" layoutX="291.0" layoutY="424.0" prefHeight="22.0" prefWidth="79.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

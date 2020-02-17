@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="720.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.hotel.IntRecpController">
+   <children>
+      <Pane prefHeight="67.0" prefWidth="720.0" style="-fx-background-color: #3C9AB7;">
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="677.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Pictures/icons8_close_window_48px_2.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="31.0" layoutY="15.0" prefHeight="29.0" prefWidth="341.0" text="Welcome Receptionist" textFill="WHITE">
+               <font>
+                  <Font name="Calisto MT Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <VBox layoutY="71.0" prefHeight="420.0" prefWidth="175.0" style="-fx-background-color: #1E8AAB;">
+         <children>
+            <JFXButton onAction="#ReservationAction" prefHeight="90.0" prefWidth="184.0" text="Reservations" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="4.0" prefWidth="175.0" style="-fx-background-color: #ffff;" />
+            <JFXButton onAction="#RoomsAction" prefHeight="99.0" prefWidth="175.0" text="Manage Rooms" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="4.0" prefWidth="140.0" style="-fx-background-color: #ffff;" />
+            <JFXButton onAction="#CleintsAction" prefHeight="100.0" prefWidth="175.0" text="Clients" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="11.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="4.0" prefWidth="170.0" style="-fx-background-color: #ffff;" />
+            <JFXButton fx:id="logOutB" onAction="#LogOutAction" prefHeight="113.0" prefWidth="175.0" text="Log out" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <Pane prefHeight="6.0" prefWidth="175.0" style="-fx-background-color: #ffff;" />
+         </children>
+      </VBox>
+      <Pane layoutX="175.0" layoutY="67.0" prefHeight="420.0" prefWidth="545.0" style="-fx-background-color: #ffff;">
+         <children>
+            <Pane fx:id="AddRoomPan" prefHeight="420.0" prefWidth="545.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <Label layoutX="199.0" layoutY="14.0" prefHeight="39.0" prefWidth="148.0" text="Add Room" textFill="#5b83ac">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="CapacityTestF" layoutX="186.0" layoutY="103.0" prefHeight="25.0" prefWidth="175.0" promptText="Capacity" />
+                  <JFXComboBox fx:id="TypeCom" layoutX="186.0" layoutY="167.0" prefHeight="25.0" prefWidth="131.0" />
+                  <JFXTextField fx:id="CostText" layoutX="184.0" layoutY="249.0" promptText="Cost ( DHS ) " />
+                  <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="362.0" onAction="#BackAction" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Back" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="368.0" layoutY="362.0" onAction="#AddRoomAction" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Add" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane fx:id="RoomsPan" prefHeight="420.0" prefWidth="545.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <TableView fx:id="Table_Room" layoutX="17.0" layoutY="22.0" prefHeight="200.0" prefWidth="517.0">
+                    <columns>
+                      <TableColumn fx:id="Id_Room" prefWidth="75.0" text="Id Room" />
+                      <TableColumn fx:id="Capacity" prefWidth="179.6666259765625" text="Capacity" />
+                        <TableColumn fx:id="Type" prefWidth="133.3333740234375" text="Type" />
+                        <TableColumn fx:id="Cost" prefWidth="128.33331298828125" text="Cost" />
+                    </columns>
+                  </TableView>
+                  <JFXButton layoutX="17.0" layoutY="247.0" onAction="#AddAction" prefHeight="32.0" prefWidth="93.0" style="-fx-background-color: #61B643;" text="Add " />
+                  <JFXButton fx:id="Button_Delete" layoutX="121.0" layoutY="247.0" onAction="#DeleteAction" prefHeight="32.0" prefWidth="93.0" style="-fx-background-color: #E3152B;" text="Delete" />
+                  <JFXButton layoutX="17.0" layoutY="374.0" onAction="#RefreshRoomsAction" prefHeight="32.0" prefWidth="93.0" style="-fx-background-color: #D0D5EA;" text="Refresh" />
+                  <JFXButton fx:id="Update_Button" layoutX="226.0" layoutY="247.0" onAction="#UpdateAction" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: #2E9AA1;" text="Update" />
+                  <ProgressIndicator fx:id="ProgressBar" layoutX="360.0" layoutY="253.0" prefHeight="121.0" prefWidth="135.0" progress="0.77" />
+                  <Label layoutX="382.0" layoutY="382.0" text="Available Rooms">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="testL" layoutX="186.0" layoutY="334.0" prefHeight="17.0" prefWidth="62.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="UpdateRoomPan" prefHeight="420.0" prefWidth="553.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <JFXTextField fx:id="NewCapacity" layoutX="184.0" layoutY="110.0" prefHeight="25.0" prefWidth="148.0" promptText="New Capacity" />
+                  <JFXComboBox fx:id="Com" layoutX="183.0" layoutY="176.0" prefHeight="25.0" prefWidth="148.0" />
+                  <JFXTextField fx:id="NewCost" layoutX="183.0" layoutY="253.0" promptText="New Cost" />
+                  <Label layoutX="166.0" layoutY="19.0" prefHeight="43.0" prefWidth="194.0" text="Update Room" textFill="#5b83ac">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+                  <JFXButton buttonType="RAISED" layoutX="45.0" layoutY="345.0" onAction="#BackAction" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Back" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="311.0" layoutY="345.0" onAction="#UpAction" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Update" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane fx:id="ClientsPan" prefHeight="420.0" prefWidth="545.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <TableView fx:id="Table_Clients" layoutX="13.0" layoutY="22.0" prefHeight="247.0" prefWidth="517.0">
+                    <columns>
+                      <TableColumn fx:id="idclient" prefWidth="109.0" text="Id client" />
+                      <TableColumn fx:id="cinp" prefWidth="141.0" text="CIN or PASS" />
+                        <TableColumn fx:id="email" prefWidth="126.0" text="Email" />
+                        <TableColumn fx:id="phone" prefWidth="140.33331298828125" text="Phone" />
+                    </columns>
+                  </TableView>
+                  <JFXButton buttonType="RAISED" layoutX="14.0" layoutY="308.0" onAction="#ContactAction" prefHeight="43.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Contact" textFill="WHITE" />
+                  <ImageView fitHeight="29.0" fitWidth="29.0" layoutX="118.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pictures/gmail_48px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="GmailPane" prefHeight="420.0" prefWidth="545.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <JFXTextField fx:id="EmailTextField" layoutX="174.0" layoutY="151.0" prefHeight="25.0" prefWidth="184.0" promptText="Email" />
+                  <ImageView fitHeight="121.0" fitWidth="184.0" layoutX="163.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Pictures/Gmail.jpg" />
+                     </image>
+                  </ImageView>
+                  <JFXButton buttonType="RAISED" layoutX="358.0" layoutY="320.0" onAction="#ConnectionAction" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: #3C9AB7;" text="NEXT" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="221.0" layoutY="320.0" onAction="#EXITACTION" prefHeight="43.0" prefWidth="115.0" style="-fx-background-color: #3C9AB7;" text="EXIT" textFill="WHITE" />
+                  <JFXPasswordField fx:id="PasswordField" layoutX="174.0" layoutY="221.0" prefHeight="25.0" prefWidth="184.0" promptText="Password" />
+               </children>
+            </Pane>
+            <Pane fx:id="PaneSendEmail" prefHeight="420.0" prefWidth="545.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <JFXButton buttonType="RAISED" layoutX="348.0" layoutY="351.0" onAction="#SendAction" prefHeight="43.0" prefWidth="148.0" style="-fx-background-color: #3C9AB7;" text="Send" textFill="WHITE" />
+                  <JFXTextArea fx:id="Text" layoutX="53.0" layoutY="169.0" prefHeight="152.0" prefWidth="440.0" promptText="Text" />
+                  <JFXTextField fx:id="Topic" layoutX="53.0" layoutY="90.0" prefHeight="25.0" prefWidth="184.0" promptText="Topic" />
+                  <ImageView fitHeight="33.0" fitWidth="39.0" layoutX="355.0" layoutY="355.0">
+                     <image>
+                        <Image url="@../../../../../../../AppData/Local/Temp/icons8_gmail_64px.png" />
+                     </image>
+                  </ImageView>
+                  <JFXButton buttonType="RAISED" layoutX="53.0" layoutY="351.0" onAction="#ExitAction" prefHeight="43.0" prefWidth="141.0" style="-fx-background-color: #3C9AB7;" text="Exit" textFill="WHITE" />
+                  <ImageView layoutX="136.0" layoutY="360.0">
+                     <image>
+                        <Image url="@../../../../../../../AppData/Local/Temp/icons8_exit_26px.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="53.0" layoutY="26.0" prefHeight="38.0" prefWidth="226.0" text="New Message" textFill="#2ca4cc">
+                     <font>
+                        <Font name="Arial Black" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="PanReservation" prefHeight="420.0" prefWidth="545.0" style="-fx-background-color: #ffff;">
+               <children>
+                  <TableView fx:id="Table_Reservation" layoutX="19.0" layoutY="25.0" prefHeight="200.0" prefWidth="508.0">
+                    <columns>
+                      <TableColumn fx:id="ID_Reserv" prefWidth="107.66668701171875" text="Id Reservation" />
+                      <TableColumn fx:id="Check_in" prefWidth="94.3333740234375" text="Check in" />
+                        <TableColumn fx:id="Check_out" prefWidth="96.0" text="Check out" />
+                        <TableColumn fx:id="Id_client" minWidth="3.0" prefWidth="103.6666259765625" text="Id Client" />
+                        <TableColumn fx:id="Id_chambre" prefWidth="104.3333740234375" text="Id Room" />
+                    </columns>
+                  </TableView>
+                  <JFXButton buttonType="RAISED" layoutX="19.0" layoutY="253.0" onAction="#CancelReservationAction" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: RED;" text="Cancel Reservation" textFill="WHITE" />
+                  <JFXButton buttonType="RAISED" layoutX="19.0" layoutY="373.0" onAction="#RefreshAction" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #D0D5EA;" text="Refresh" textFill="#0b0b0b" />
+                  <Label layoutX="157.0" layoutY="315.0" text="Total Number of reservations : " textFill="#3c9ab7">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="RNumber" layoutX="389.0" layoutY="281.0" prefHeight="79.0" prefWidth="77.0">
+                     <font>
+                        <Font size="60.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="545.0" prefWidth="785.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.mycompany.hotel.InterAdminController">
+   <children>
+      <Pane prefHeight="545.0" prefWidth="785.0" style="-fx-background-color: #ffff;">
+         <children>
+            <Pane layoutX="-1.0" layoutY="495.0" prefHeight="51.0" prefWidth="787.0" style="-fx-background-color: #3C9AB7;" />
+            <Pane layoutX="-2.0" layoutY="-1.0" prefHeight="81.0" prefWidth="788.0" style="-fx-background-color: #3C9AB7;">
+               <children>
+                  <Label layoutX="272.0" layoutY="19.0" prefHeight="43.0" prefWidth="244.0" text="Manage Accounts" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="LogOutButton" layoutX="38.0" layoutY="21.0" onAction="#LogOutAction" prefHeight="43.0" prefWidth="93.0" style="-fx-background-color: #EFF2F3;" text="Log out" textFill="#5bace6">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
+            <TableView fx:id="Table_User" layoutX="245.0" layoutY="121.0" onMousePressed="#TableAction" prefHeight="286.0" prefWidth="526.0">
+              <columns>
+                <TableColumn fx:id="Name_Col" prefWidth="126.33331298828125" text="Full Name" />
+                <TableColumn fx:id="Login_Col" prefWidth="61.66668701171875" text="Login" />
+                  <TableColumn fx:id="Type_Col" prefWidth="114.66668701171875" text="Type" />
+                  <TableColumn fx:id="Password_Col" prefWidth="117.6666259765625" text="Password" />
+                  <TableColumn fx:id="Index_Col" prefWidth="107.3333740234375" text="Index" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="Button_Add" layoutX="14.0" layoutY="448.0" onAction="#AddAction" prefHeight="32.0" prefWidth="109.0" style="-fx-background-color: #61B643;" text="Add" />
+            <JFXButton fx:id="Update_Button" layoutX="158.0" layoutY="448.0" onAction="#UpdateAction" prefHeight="32.0" prefWidth="109.0" style="-fx-background-color: #2E9AA1;" text="Update" />
+            <JFXButton fx:id="Button_Delete" layoutX="304.0" layoutY="448.0" onAction="#DeleteAction" prefHeight="32.0" prefWidth="109.0" style="-fx-background-color: #E3152B;" text="Delete" />
+            <JFXTextField fx:id="FN" layoutX="24.0" layoutY="146.0" prefHeight="25.0" prefWidth="188.0" promptText="Full Name" />
+            <JFXTextField fx:id="Login" layoutX="24.0" layoutY="200.0" prefHeight="25.0" prefWidth="188.0" promptText="Login" />
+            <JFXTextField fx:id="Passw" layoutX="24.0" layoutY="321.0" prefHeight="25.0" prefWidth="188.0" promptText="Password" />
+            <JFXToolbar layoutX="92.0" layoutY="281.0" />
+            <JFXComboBox fx:id="Type" layoutX="25.0" layoutY="260.0" prefHeight="25.0" prefWidth="134.0" />
+            <JFXTextField fx:id="Index" layoutX="25.0" layoutY="382.0" prefHeight="25.0" prefWidth="188.0" promptText="Index" />
+            <JFXButton layoutX="671.0" layoutY="445.0" onAction="#RefreshAction" prefHeight="32.0" prefWidth="93.0" style="-fx-background-color: #D0D5EA;" text="Refresh" />
+            <Label layoutX="39.0" layoutY="102.0" prefHeight="19.0" prefWidth="168.0" text="User account informations">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,2 +1,15 @@
+Sensors\durt.class
+com\mycompany\hotel\ChefPController.class
+Model\client.class
+com\mycompany\hotel\InterAdminController.class
+com\mycompany\hotel\IntRecpController$1.class
+Model\client2.class
+Model\Reservation.class
 com\mycompany\hotel\FXMLController.class
+com\mycompany\hotel\IntClientController.class
+API\Database.class
+Model\User.class
+Model\Chambre.class
+Sensors\dust.class
+com\mycompany\hotel\IntRecpController.class
 com\mycompany\hotel\MainApp.class
